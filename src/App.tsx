@@ -264,7 +264,7 @@ export default function App() {
                   <div className="no-print mt-6 flex flex-wrap gap-3">
                     <a
                       className="btn-primary"
-                      href="/cv.pdf"
+                      href={`${import.meta.env.BASE_URL}cv.üdf`}
                       download
                       aria-label="Lebenslauf als PDF herunterladen"
                     >
