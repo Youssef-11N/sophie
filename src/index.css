@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-taupe: #c6b8b3;
+  --color-surface: #fafbfd;
+  --color-ink: #0a0707;
+  --color-accent: #94a3d3;
+  --color-accent-light: #bbc6e7;
+  --color-muted-lilac: #9b94a3;
+  --color-muted: #645c5c;
+  --color-taupe-rgb: 198 184 179;
+  --color-surface-rgb: 250 251 253;
+  --color-ink-rgb: 10 7 7;
+  --color-accent-rgb: 148 163 211;
+  --color-accent-light-rgb: 187 198 231;
+  --color-muted-lilac-rgb: 155 148 163;
+  --color-muted-rgb: 100 92 92;
+  --font-serif: "Playfair Display";
+  --font-sans: "Inter";
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  min-height: 100%;
+  background-color: var(--color-taupe);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  background-image:
+    radial-gradient(circle at top left, rgba(250, 251, 253, 0.5), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(148, 163, 211, 0.35), transparent 60%);
+}
+
+::selection {
+  background: var(--color-accent-light);
+  color: var(--color-ink);
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-serif);
+    letter-spacing: 0.08em;
+  }
+
+  p {
+    line-height: 1.6;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-surface shadow-soft transition duration-200 hover:-translate-y-0.5 hover:bg-ink/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface motion-reduce:transition-none;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-ink px-5 py-2.5 text-sm font-semibold text-ink transition duration-200 hover:-translate-y-0.5 hover:border-ink/70 hover:text-ink/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface motion-reduce:transition-none;
+  }
+
+  .card-surface {
+    @apply rounded-3xl border border-white/70 bg-surface shadow-soft;
+  }
+
+  .section-kicker {
+    @apply text-xs uppercase tracking-[0.3em] text-muted;
+  }
+}
+
+@media print {
+  body {
+    background: #ffffff !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-flat {
+    box-shadow: none !important;
+    border-color: #dddddd !important;
+  }
+
+  .print-inset {
+    background: #ffffff !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
