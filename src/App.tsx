@@ -270,7 +270,11 @@ export default function App() {
                     >
                       Lebenslauf PDF
                     </a>
-                    <a className="btn-secondary" href="#downloads" aria-label="Zum Kontaktbereich springen">
+                    <a
+                      className="btn-secondary"
+                      href="#downloads"
+                      aria-label="Zum Kontaktbereich springen"
+                    >
                       Kontakt
                     </a>
                   </div>
@@ -296,7 +300,9 @@ export default function App() {
                 <div className="flex flex-col items-center gap-6 text-center">
                   <div className="relative">
                     <img
-                      src="/PHOTO-2025-12-25-22-09-44.jpg"
+                      src={`${
+                        import.meta.env.BASE_URL
+                      }PHOTO-2025-12-25-22-09-44.jpg`}
                       alt="Porträt von Sophie Mayerhofer"
                       className="h-56 w-56 rounded-full object-cover ring-4 ring-white/70 shadow-soft md:h-64 md:w-64"
                     />
@@ -524,7 +530,7 @@ export default function App() {
                 </button>
               )}
               <p className="mt-3 text-xs text-muted">
-                Falls die Vorschau nicht lädt:{' '}
+                Falls die Vorschau nicht lädt:{" "}
                 <a
                   className="font-semibold text-ink underline-offset-4 hover:underline"
                   href="/cv.pdf"
