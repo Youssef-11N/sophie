@@ -466,8 +466,8 @@ export default function App() {
               <DownloadCard
                 title="Lebenslauf"
                 description="Lebenslauf als übersichtliches PDF."
-                openHref="/cv.pdf"
-                downloadHref="/cv.pdf"
+                openHref={`${import.meta.env.BASE_URL}cv.pdf`}
+                downloadHref={`${import.meta.env.BASE_URL}cv.pdf`}
                 downloadName="Lebenslauf_Sophie_Mayerhofer.pdf"
               />
               <div className="flex h-full flex-col justify-between rounded-2xl border border-accent/30 bg-white/70 p-5 text-sm text-muted shadow-softLight">
@@ -514,7 +514,7 @@ export default function App() {
                 <div className="mt-4 overflow-hidden rounded-xl border border-accent/20">
                   <iframe
                     title="Lebenslauf PDF"
-                    src="/cv.pdf"
+                    src={`${import.meta.env.BASE_URL}cv.pdf`}
                     loading="lazy"
                     className="h-[520px] w-full"
                   />
@@ -533,7 +533,7 @@ export default function App() {
                 Falls die Vorschau nicht lädt:{" "}
                 <a
                   className="font-semibold text-ink underline-offset-4 hover:underline"
-                  href="/cv.pdf"
+                  href={`${import.meta.env.BASE_URL}cv.pdf`}
                   target="_blank"
                   rel="noreferrer"
                 >
